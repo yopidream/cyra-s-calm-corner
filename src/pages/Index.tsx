@@ -16,6 +16,7 @@ const services = [
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
