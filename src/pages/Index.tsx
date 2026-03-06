@@ -1,5 +1,5 @@
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import { Mail, Calendar, FileText, Search, Share2, Inbox, Send } from "lucide-react";
+import { Mail, Calendar, FileText, Search, Share2, Inbox, Send, Menu, X } from "lucide-react";
 import { useState } from "react";
 import ToolsSkillsSection from "@/components/ToolsSkillsSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
@@ -16,6 +16,7 @@ const services = [
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +36,28 @@ const Index = () => {
               </a>
             ))}
           </div>
+          <button
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 px-6 py-4 flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* Hero */}
