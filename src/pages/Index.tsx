@@ -1,8 +1,10 @@
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import { Mail, Calendar, FileText, Search, Share2, Inbox, LayoutGrid, FileSpreadsheet, Star, Send } from "lucide-react";
+import { Mail, Calendar, FileText, Search, Share2, Inbox, Send } from "lucide-react";
 import { useState } from "react";
+import ToolsSkillsSection from "@/components/ToolsSkillsSection";
+import WorkSamplesSection from "@/components/WorkSamplesSection";
 
-const navLinks = ["About", "Services", "Skills", "Portfolio", "Testimonials", "Contact"];
+const navLinks = ["About", "Services", "Skills", "Portfolio", "Contact"];
 
 const services = [
   { icon: Inbox, title: "Email Management", desc: "Inbox zero strategies, filtering, and professional email correspondence." },
@@ -10,24 +12,6 @@ const services = [
   { icon: FileText, title: "Data Entry & Document Organization", desc: "Accurate data entry, file management, and document formatting." },
   { icon: Search, title: "Online Research", desc: "In-depth research, competitor analysis, and data compilation." },
   { icon: Share2, title: "Social Media Assistance", desc: "Content scheduling, engagement tracking, and platform management." },
-];
-
-const tools = [
-  "Google Workspace", "Microsoft Excel", "Microsoft Word", "Canva",
-  "Data Entry", "Online Research", "Administrative Support",
-];
-
-const portfolio = [
-  { title: "Organized Spreadsheet Template", desc: "Custom tracking spreadsheet with automated formulas for client project management.", color: "bg-lavender-light" },
-  { title: "Inbox Management System", desc: "Email categorization system that reduced response time by 60%.", color: "bg-secondary" },
-  { title: "Social Media Content Calendar", desc: "30-day content calendar with post templates and engagement strategy.", color: "bg-accent" },
-  { title: "Research Summary Document", desc: "Comprehensive market research report with actionable insights.", color: "bg-muted" },
-];
-
-const testimonials = [
-  { name: "Sarah Mitchell", role: "Startup Founder", text: "Cyra transformed my chaotic inbox into an organized system. She's incredibly reliable and always one step ahead." },
-  { name: "James Rivera", role: "Real Estate Agent", text: "Her calendar management skills are outstanding. I never miss a meeting, and my schedule runs like clockwork." },
-  { name: "Emily Chen", role: "E-commerce Owner", text: "The social media calendar Cyra created boosted our engagement by 40%. Highly recommend her services!" },
 ];
 
 const Index = () => {
@@ -114,57 +98,10 @@ const Index = () => {
       </section>
 
       {/* Tools & Skills */}
-      <section id="skills" className="section-padding bg-muted/40">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-12">Tools & Skills</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {tools.map((tool) => (
-              <span key={tool} className="px-5 py-2.5 rounded-full bg-card border border-border text-sm font-medium text-foreground shadow-soft hover:border-primary/40 transition-colors">
-                {tool}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ToolsSkillsSection />
 
-      {/* Portfolio */}
-      <section id="portfolio" className="section-padding">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-12">Portfolio</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {portfolio.map((p) => (
-              <div key={p.title} className="glass-card hover:shadow-soft-lg transition-shadow">
-                <div className={`h-32 ${p.color} rounded-xl mb-4 flex items-center justify-center`}>
-                  <FileSpreadsheet className="w-10 h-10 text-primary/40" />
-                </div>
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-1">{p.title}</h3>
-                <p className="text-sm text-muted-foreground">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section id="testimonials" className="section-padding bg-muted/40">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-12">Testimonials</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="glass-card">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground mb-4 italic">"{t.text}"</p>
-                <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Work Samples */}
+      <WorkSamplesSection />
 
       {/* Contact */}
       <section id="contact" className="section-padding">
