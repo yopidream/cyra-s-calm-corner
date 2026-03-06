@@ -1,5 +1,5 @@
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import { Mail, Calendar, FileText, Search, Share2, Inbox, Send } from "lucide-react";
+import { Mail, Calendar, FileText, Search, Share2, Inbox, Send, Menu, X } from "lucide-react";
 import { useState } from "react";
 import ToolsSkillsSection from "@/components/ToolsSkillsSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
