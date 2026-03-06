@@ -15,7 +15,7 @@ const WorkSamplesSection = () => (
   <section id="portfolio" className="section-padding">
     <div className="max-w-6xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-12">Work Samples</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {workSamples.map((s) => (
           <div key={s.title} className="glass-card hover:shadow-soft-lg transition-shadow">
             <div className={`h-28 ${s.color} rounded-xl mb-4 flex items-center justify-center`}>
